@@ -1,0 +1,32 @@
+<div id="posts-index">
+
+  <% if @posts.exists? %>
+      <% @posts.each_slice(2) do |post| %>
+          <div class="row">
+            <% post.each do |post| %>
+
+                <div class="col-lg-6">
+                  <div class="post">
+                    <%= image_tag post.image.url, width: '100%' %>
+                    <!--<img src="img/post1.png" alt="">-->
+                    <div class="post-content">
+                      <h3><%= post.title %></h3>
+                      <small>Posted by <%= post.user.name %> on <%= post.created_at.to_time.strftime('%B %e at %l:%M %p') %> </small>
+                      <%= raw post.body.truncate(250) %>
+                      <%= link_to 'Read More', post_path(post), class: 'btn btn-primary btn-block' %>
+                    </div>
+                  </div>
+                </div>
+            <% end %>
+          </div>
+      <% end %>
+  <% else %>
+      <p>No posts in this categories yet</p>
+  <% end %>
+</div>
+<div class="digg_pagination">
+  <!--<div class="page_info">-->
+  <!--<%= page_entries_info @posts %>-->
+  <!--</div>-->
+  <%= will_paginate @posts, :container => false %>
+</div>

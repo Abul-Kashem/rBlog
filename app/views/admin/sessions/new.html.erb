@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="body-plain__title">
+        <h1 class="text-center">Log In</h1>
+      </div>
+    </div>
+  </div>
+  <!-- / .row -->
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-sm-offset-3 col-md-offset-3 col-lg-offset-4">
+      <div class="body-plain__form">
+
+        <!-- Sign In form -->
+
+          <%= form_tag admin_sessions_path, :class => '' %>
+
+          <% if flash[:notice] %>
+              <div class="alert alert-success">
+                <%= flash[:notice] %>
+              </div>
+          <% end %>
+          <% if flash[:alert] %>
+              <div class="alert alert-danger">
+                <%= flash[:alert] %>
+              </div>
+          <% end %>
+
+
+
+          <label for="sign-in__email" class="sr-only">Enter email</label>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+            <!--<input type="email" class="form-control" id="sign-in__email" placeholder="Enter email">-->
+            <%= text_field_tag :email, params[:email], class: 'form-control', placeholder: 'Enter email' %>
+          </div>
+          <br>
+          <label for="sign-in__password" class="sr-only">Enter password</label>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+            <!--<input type="password" class="form-control" id="sign-in__password" placeholder="form-control">-->
+            <%= password_field_tag :password, '', class: 'form-control', placeholder: 'Enter password' %>
+          </div>
+          <div class="checkbox">
+
+          </div>
+          <!--<button type="submit" class="btn btn-primary btn-block btn-lg">Submit</button>-->
+          <%= submit_tag "Log In", class: 'btn btn-primary btn-block btn-lg' %>
+
+
+        <!-- Sign Up link -->
+
+
+      </div>
+      <!-- / .body-plain__form -->
+
+
+
+    </div>
+  </div>
+  <!-- / .row -->
+</div>

@@ -1,0 +1,57 @@
+/* Body Plain (Login pages) */
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'font-awesome';
+
+.body_plain {
+  position: relative;
+  margin-bottom: 0 !important;
+  background: #f6f6f6;
+}
+
+.body_plain::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 250px;
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid #DDD;
+}
+
+.body-plain__title {
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
+
+.body-plain__title > h1 {
+  font-weight: 300;
+}
+
+.body-plain__form {
+  padding: 45px 30px;
+  background: white;
+  border: 1px solid #DDD;
+  border-radius: 6px;
+}
+
+.body-plain__footer {
+  color: #777777;
+  margin: 30px 15px;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .body-plain__title {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .body-plain__title > h1 {
+    font-size: 24px;
+  }
+  .body-plain__form {
+    padding: 20px;
+  }
+}
