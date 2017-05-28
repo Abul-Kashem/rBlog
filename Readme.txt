@@ -17,6 +17,9 @@ rails g controller admin/sessions new create
 rails g controller about index
 rails g controller contacts new create
 
+
+rails generate migration MigrationName --CamelCase
+
 rails g model post title:string category_id:integer user_id:integer tags:text image:string body:text
 rails db:migrate
 rails g model category name:string

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'contacts' => 'contacts#new'
 
-  get 'contacts/create'
 
   get 'about' => 'about#index'
+  # get 'contacts' => 'contacts#index'
+  resources :contacts, only: [:new, :create], path_names: { new: "" }
 
 
   namespace :admin do
@@ -115,7 +115,7 @@ Rails.application.routes.draw do
 
 
   resources :posts, :categories
-  resources "contacts", only: [:new, :create]
+
 
   namespace :admin do
     resources :posts, :categories, :comments, :users, :sessions
