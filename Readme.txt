@@ -17,6 +17,28 @@ rails g controller admin/sessions new create
 rails g controller about index
 rails g controller contacts new create
 
+======================================================================================================================
+rails g controller product index show
+rails g controller admin/product new create edit update destroy index show
+rails g controller category index show
+rails g controller admin/category new create edit update destroy index show
+rails g controller admin/users new create edit update destroy index show
+rails g controller admin/sessions new create
+
+
+rails g model product name:string
+
+1. controller
+2. model
+3. routes
+4. layouts
+5.
+
+
+
+
+======================================================================================================================
+
 
 rails generate migration MigrationName --CamelCase
 
